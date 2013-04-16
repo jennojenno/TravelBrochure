@@ -1,11 +1,23 @@
-<% @attractions.each do |attraction| %>
-  <tr>
-    <td><%= attraction.name %></td>
-    <td><%= attraction.image_url %></td>
-    <td><%= attraction.latitude %></td>
-    <td><%= attraction.longitude %></td>
-    <td><%= link_to 'Show', attraction %></td>
-    <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-    <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<div style="float:left">
+	<% @attractions.each do |attraction| %>
+ 	
+    <b><h2 style="color:#E01B6A"><%= attraction.name %></h2></b>
+    Lat: <%= attraction.latitude %>
+    Long: <%= attraction.longitude %>
+    <% map_url = 'http://maps.google.com/?q=#{attraction.latitude},#{attraction.longitude}+(#{attraction.name})' %><BR>
+    <img src="<%= attraction.image_url %>" width="340" border="7" hspace="10" vspace="10">
+
+    <BR>
+    <div style="float:right">
+    <%= link_to 'Map', map_url %> 
+    <%= link_to 'Show', attraction %>
+    <%= link_to 'Edit', edit_attraction_path(attraction) %>
+    <%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
+<BR>
 <% end %>
+
+</div>
+
+
+

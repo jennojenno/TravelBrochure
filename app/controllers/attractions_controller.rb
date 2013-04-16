@@ -3,7 +3,7 @@ class AttractionsController < ApplicationController
   # GET /attractions.json
   def index
     @attractions = Attraction.all
-
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @attractions }

@@ -1,9 +1,17 @@
+<div style="float:left">
 <% @destinations.each do |destination| %>
-  <tr>
-    <td><%= destination.name %></td>
-    <td><%= destination.image_url %></td>
-    <td><%= link_to 'Show', destination %></td>
-    <td><%= link_to 'Edit', edit_destination_path(destination) %></td>
-    <td><%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  
+    <b><h2 style="color:#E01B6A"><%= destination.name %></b></h2>
+    <img src="<%= destination.image_url %>" width="320" border="7" hspace="10" vspace="10">
+
+
+    <BR>
+
+    <center>
+    <%= link_to 'Show', destination %>
+    <%= link_to 'Edit', edit_destination_path(destination) %>
+    <%= link_to 'Destroy', destination, method: :delete, data: { confirm: 'Are you sure?' } %></center>
+
+ 
 <% end %>
+</div>
