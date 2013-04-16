@@ -11,17 +11,10 @@
     <th></th>
   </tr>
 
-<% @attractions.each do |attraction| %>
-  <tr>
-    <td><%= attraction.name %></td>
-    <td><%= attraction.image_url %></td>
-    <td><%= attraction.latitude %></td>
-    <td><%= attraction.longitude %></td>
-    <td><%= link_to 'Show', attraction %></td>
-    <td><%= link_to 'Edit', edit_attraction_path(attraction) %></td>
-    <td><%= link_to 'Destroy', attraction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+
+<%= render @attractions %>
+
+
 </table>
 
 <br />

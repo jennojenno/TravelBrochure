@@ -5,10 +5,11 @@ class Attraction < ActiveRecord::Base
 
   validates :name, :image_url, :presence => :true
 
-  geocoded_by :destination_and_attraction
-  after_validation :geocode 
+  # geocoded_by :destination_and_attraction
+  # after_validation :geocode 
 
   def destination_and_attraction
     "#{destination.name} #{self.name}"
+
   end
 end
